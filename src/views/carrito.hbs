@@ -1,0 +1,42 @@
+
+
+{{#if isUser}}
+
+<div class="container text-center my-3">
+    <div class="jumbotron" style="background-color: green;color: white;">
+        <div>
+        {{#each resp.carts.productos}}
+        <h3>Producto: {{this.name}} Precio: {{this.price}}</h3>
+        <div>
+                        <form class="form" action="/carrito/deleteprod/product/{{this._id}}" method="post">
+                <div class="form-group">
+                    <input class="btn btn-success my-3" type="submit" value="Quitar de carrito">
+                </div>
+            </form>
+        </div>
+        {{/each}}
+        </div>
+
+
+        <form action="/carrito/deleteallprod/product/" method="post">
+            <div class="text-center"></div>
+            <button class="btn btn-danger my-5">Vaciar Carrito</button>
+        </form>
+        <form action="/logout">
+            <div class="text-center"></div>
+            <button class="btn btn-danger my-5">Logout</button>
+        </form>
+        <form action="/user/Profile">
+    <div class="text-center"></div>
+    <button class="btn btn-info my-3">Back to home Profile</button>
+    </form>
+    </div>
+            <form action="/carrito/buy/{{resp.carts.id}}" method="post">
+    <div class="text-center"></div>
+    <button class="btn btn-info my-3">Comprar</button>
+    </form>
+    </div>
+
+
+</div>
+{{/if}}

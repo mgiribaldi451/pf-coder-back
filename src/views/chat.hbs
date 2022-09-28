@@ -1,0 +1,23 @@
+<h2>User chat</h2>
+
+{{#if isUser}}
+<div class="container text-center my-3">
+    <div class="jumbotron" style="background-color: green;color: white;">
+    <div>
+     <form class="form-inline" onsubmit="addMessage(this)" autocomplete="off">
+      <input type="text" id="username" class="form-control my-2 mr-2" placeholder="Tu email" value="{{user}}">
+      <input type="text" id="texto" class="form-control my-2 mr-2" placeholder="Cuéntanos algo...">
+      <input class="btn btn-primary my-2" type="submit" value="Enviar!">
+    </form>
+  </div>
+    <div id="messages">
+
+    </div>
+
+</div>
+
+
+</div>
+<script src="../index.js"></script>
+</div>
+{{/if}}
